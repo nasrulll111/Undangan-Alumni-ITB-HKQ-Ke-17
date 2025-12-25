@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Khaflah Khotmil Qur'an ke-17</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    
+    :root{ --primary:#1f6f54; --gold:#d4af37; }
+    *{box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+    body{ margin:0; background:linear-gradient(180deg,#0f3d2e,#1f6f54); display:flex; justify-content:center; }
+    .container{ max-width:420px; width:100%; background:#fff; border-radius:24px 24px 0 0; overflow:hidden; display:none; }
+    .opening{ position:fixed; inset:0; background:linear-gradient(180deg,#0f3d2e,#1f6f54); color:#fff; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index:10; text-align:center; padding:20px; }
+    .opening button{ margin-top:20px; padding:14px 30px; border:none; border-radius:30px; background:var(--gold); color:#333; font-size:1rem; }
+
+    /* ===== HEADER BANNER ===== */
+    header{
+      position:relative;
+      height:260px;
+      background:url('image/baner1.jpg') center/cover no-repeat;
+      color:#fff;
+    }
+    header::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+    }
+    .header-text{
+      position:relative;
+      z-index:2;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      padding:20px;
+    }
+    header h1{font-size:1.4rem;margin:0}
+    header h2{font-size:1rem;font-weight:400;margin-top:6px}
+
+    .section{padding:20px;text-align:center}
+.info{
+  margin:16px;
+  padding:18px 20px;
+  border-radius:18px;
+  background:#ffffff;
+  border:1.5px solid rgba(212,175,55,.7);
+  font-size:.9rem;
+  line-height:1.8;
+  color:#333;
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.08);
+  position:relative;
+}
+
+/* Judul di dalam card */
+.info > strong{
+  display:block;
+  font-size:.95rem;
+  font-weight:600;
+  color:#1f6f54;
+  margin-bottom:10px;
+}
+
+/* Spasi antar baris isi */
+.info > div > div{
+  padding:8px 0;
+  border-bottom:1px solid #eee;
+}
+
+.info > div > div:last-child{
+  border-bottom:none;
+}
+
+/* Label kecil (Tanggal / Waktu / Tempat) */
+.info strong{
+  font-weight:600;
+  color:#444;
+}
+
+/* Teks keterangan */
+.info small{
+  color:#666;
+  font-size:.8rem;
+}
+
+   .btn{
+  display:inline-block;
+   margin-bottom:32px; 
+  padding:12px 18px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  transition:.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.25);
+  opacity:.95;
+}
+
+   .ayat{
+  background:#f2efe9;
+  color:#1f6f54;
+  padding:10px;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.ayat span{
+  display:inline-block;
+  transform: translateX(-100%);
+  animation: scroll-right 18s linear infinite;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+    @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-100%)} }
+    .gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:6px; padding:0 16px 20px; }
+    .gallery img{ width:100%; border-radius:10px; }
+    footer{ text-align:center; padding:16px; font-size:.8rem; color:#060a3f; }
+    /* RATA KANAN SUSUNAN ACARA */
+.susunan-acara .info{
+  text-align:left;
+}
+
+/* ===== ACTION ICONS MODERN ===== */
+
+.action-icons{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  padding:20px;
+}
+
+/* Wrapper tombol */
+.icon-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:14px 10px;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+  transition:.25s ease;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.icon-wrap:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+/* Tombol ikon (persegi panjang) */
+.icon-btn{
+  width:100%;
+  height:44px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:8px;
+}
+
+.icon-btn svg{
+  width:22px;
+  height:22px;
+  fill:#fff;
+}
+
+/* Label teks */
+.icon-wrap span{
+  font-size:11px;
+  font-weight:600;
+  color:#333;
+  line-height:1.3;
+}
+
+/* WARNA TOMBOL */
+.icon-btn.wa{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+}
+
+.icon-btn.music{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+}
+
+.icon-btn.pdf{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+}
+
+.icon-btn.pdf svg{
+  fill:#ffffff;
+}
+
+
+/* HOVER */
+.icon-wrap:hover .icon-btn{
+  transform:translateY(-4px) scale(1.05);
+}
+.countdown-box{
+  background:linear-gradient(135deg,#1f6f54,#0f3d2e);
+  border-radius:20px;
+  padding:22px 16px;
+  color:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.countdown-box h3{
+  margin:0 0 16px;
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.3px;
+}
+
+.countdown{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.cd-item{
+  flex:1;
+  background:rgba(255,255,255,.15);
+  border-radius:14px;
+  padding:12px 6px;
+  text-align:center;
+  backdrop-filter:blur(6px);
+}
+
+.cd-item span{
+  display:block;
+  font-size:1.6rem;
+  font-weight:700;
+  line-height:1;
+}
+
+.cd-item small{
+  font-size:.7rem;
+  opacity:.85;
+  letter-spacing:.5px;
+}
+
+footer{
+  background:linear-gradient(135deg,#1f6f54,#0f3d2e);
+  color:#fff;
+  text-align:center;
+  padding:20px 16px;
+  font-size:.8rem;
+  line-height:1.6;
+  border-top:2px solid var(--gold);
+}
+
+.arabic{
+  font-family:'Amiri', serif;
+  font-size:20px;
+  line-height:1.9;
+  direction:rtl;
+  text-align:center;
+  letter-spacing:.5px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="opening" id="opening">
+  <h2 id="guestName">Undangan Khusus</h2>
+  <p>Khaflah Khotmil Qur'an ke-17<br>PonPes Ittihadut Tholibin</p>
+  <button onclick="openInvitation()">📜 Buka Undangan</button>
+</div>
+
+<div class="container" id="main">
+
+<header>
+  <div class="header-text">
+    <h1>Khaflah Khotmil Qur'an ke-17</h1>
+    <h2>Pondok Pesantren Ittihadut Tholibin</h2>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<div class="section">
+  <div class="countdown-box">
+    <h3>Menuju Khaflah Khotmil Qur’an</h3>
+
+    <div class="countdown">
+      <div class="cd-item">
+        <span id="cd-day">0</span>
+        <small>Hari</small>
+      </div>
+
+      <div class="cd-item">
+        <span id="cd-hour">0</span>
+        <small>Jam</small>
+      </div>
+
+      <div class="cd-item">
+        <span id="cd-minute">0</span>
+        <small>Menit</small>
+      </div>
+
+      <div class="cd-item">
+        <span id="cd-second">0</span>
+        <small>Detik</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="ayat"><span> يُّؤْتِى الْحِكْمَةَ مَنْ يَّشَاۤءُۚ وَمَنْ يُّؤْتَ الْحِكْمَةَ فَقَدْ اُوْتِيَ خَيْرًا كَثِيْرًاۗ وَمَا يَذَّكَّرُ اِلَّآ اُولُوا الْاَلْبَابِ || Khaflah Khotmil Qur’an ke-XVII || Pondok Pesantren Ittihadut Tholibin</span></div>
+
+<div class="section">
+  <p class="arabic"><strong>السلام عليكم ورحمة الله وبركاته</strong></p>
+  <p>Bibarokatil Qur’an, dengan hormat kami mengundang Alumni Pondok Pesantren Ittihadut Tholibin untuk menghadiri Khaflah Khotmil Qur’an ke-XVII, Pada:</p>
+</div>
+
+
+
+<!-- WAKTU & TEMPAT -->
+<div class="info">
+  <strong>Waktu & Tempat Pelaksanaan</strong>
+
+  <div style="margin-top:12px;text-align:left;line-height:1.8">
+    <div>
+      <strong>Tanggal</strong><br>
+      31 Januari – 01 Februari 2026
+    </div>
+
+    <div style="margin-top:8px">
+      <strong>Waktu</strong><br>
+      07.00 – Selesai
+    </div>
+
+    <div style="margin-top:8px">
+      <strong>Tempat</strong><br>
+      MTs Al-Hikmah<br>
+      <small>Jl. Jawar, Kalibeber, Mojotengah, Wonosobo</small>
+    </div>
+  </div>
+</div>
+
+
+<!-- SUSUNAN ACARA -->
+<div class="section susunan-acara">
+  <h3 style="color:#1f6f54">Susunan Acara</h3>
+    <div class="info">
+    <strong>A. Pertemuan Alumni (Sabtu)</strong>
+    <ul style="text-align:left;padding-left:16px;margin-top:8px">
+        <li>Khataman Al-Qur’an Alumni Putra & Putri<br><em>08.00 – 16.00</em></li>
+        <li>Musyawarah Alumni Putra & Putri<br><em>20.00 – 22.00</em></li>
+    </ul>
+    </div>
+    <div class="info">
+    <strong>C. Khataman Al-Qur’an</strong>
+    <ul style="text-align:left;padding-left:16px;margin-top:8px">
+        <li>Pelaksanaan Khataman Al-Qur’an<br>07.00 – 08.40</li>
+         <li>Pelaksanaan Khataman Al-Qur’an<br>08.40 – 09.00</li>
+    </ul>
+    </div>
+<div class="info">
+  <strong>D. Pengajian Umum (09.00 – 12.00) </strong>
+  <ul style="text-align:left;padding-left:16px;margin-top:8px">
+    <li>Pembukaan</li>
+    <li>Pembacaan Ayat Suci Al-Qur’an</li>
+    <li>Prakata Panitia</li>
+    <li>Sambutan-sambutan</li>
+    <li>
+      Mau’idhoh Hasanah oleh:<br>
+      <strong>KH. Muhammad Najib</strong><br>
+      <small>(Pengasuh PonPes Den Anyar Jombang)</small>
+    </li>
+    <li>Penutup</li>
+  </ul>
+  <div style="text-align:left;margin-top:6px">
+  </div>
+</div>
+
+
+<div class="section">
+  <p>
+    Sungguh merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+    Bapak/Ibu/Saudara/i berkenan hadir dan memberi doa restu.
+  </p>
+
+  <p style="margin-top:20px">
+    <strong>PANITIA KHAFLAH Khotmil Qur’an ke-XVII</strong>
+  </p>
+
+  <img 
+    src="image/ttd.png"
+    alt="Tanda Tangan"
+    style="width:500px;max-width:100%;margin-top:10px">
+    <p style="margin-top:20px">
+    <strong>والسلام عليكم ورحمة الله وبركاته</strong>
+  </p>
+</div>
+<div class="action-icons">
+
+  <a href="https://wa.me/6281385553481?text=Nama%20:%0AKehadiran%20:" 
+   target="_blank" class="icon-wrap">
+  
+  <div class="icon-btn wa">
+    <!-- WhatsApp Icon -->
+    <svg viewBox="0 0 32 32">
+      <path d="M19.11 17.47c-.27-.14-1.59-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.68 1.12 2.86c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.59-.65 1.81-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M16.02 3C9.38 3 4 8.37 4 15c0 2.64.86 5.07 2.32 7.03L4 29l7.2-2.27A12.9 12.9 0 0 0 16.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3z"/>
+    </svg>
+  </div>
+
+  <span>Konfirmasi Kehadiran</span>
+</a>
+
+
+  <div class="icon-wrap" onclick="toggleMusic()">
+    <div class="icon-btn music">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+      </svg>
+    </div>
+    <span>ON/OF</span>
+  </div>
+
+  <a href="image/UNDANGAN ALUMNI.pdf" download class="icon-wrap">
+    <div class="icon-btn pdf">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h1z"/>
+        <path d="M5 19h14v2H5z"/>
+      </svg>
+    </div>
+    <span>Download Undangan PDF</span>
+  </a>
+
+</div>
+
+
+<div class="section">
+  <h3 style="
+    margin-bottom:12px;
+    font-size:1rem;
+    color:#1f6f54;
+    font-weight:600;
+  ">
+    Lokasi Acara
+  </h3>
+
+ <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.257572703695!2d109.9001075735722!3d-7.324939672032111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e700b00520484e9%3A0x4ef040a2373772c1!2sPondok%20Pesantren%20Ittihadut%20Tholibin!5e0!3m2!1sen!2sid!4v1766684095721!5m2!1sen!2sid"
+    width="100%"
+    height="220"
+    style="border:0;border-radius:16px"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <div style="margin-top:14px">
+    <a class="btn"
+       href="https://maps.app.goo.gl/K7nz7ydPHSho8RCVA"
+       target="_blank">
+       Buka Lokasi di Google Maps
+    </a>
+  </div>
+</div>
+
+
+
+
+<footer>PANITIA KHAFLAH Khotmil Qur’an ke-XVII<br>© 2026 PonPes Ittihadut Tholibin</footer>
+</div>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="image/musik.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+function openInvitation(){
+  document.getElementById('opening').style.display='none';
+  document.getElementById('main').style.display='block';
+
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.7;
+
+  music.play().catch(() => {
+    console.log("Autoplay diblokir, user harus klik ulang");
+  });
+}
+
+const params=new URLSearchParams(window.location.search);
+const name=params.get('to');
+if(name){document.getElementById('guestName').innerText='Undangan untuk '+decodeURIComponent(name)}
+
+const target=new Date('2026-01-31T07:00:00').getTime();
+setInterval(()=>{
+  let diff=target-new Date().getTime();
+  if(diff<0)diff=0;
+  document.getElementById('cd-day').innerText=Math.floor(diff/86400000);
+  document.getElementById('cd-hour').innerText=Math.floor(diff%86400000/3600000);
+  document.getElementById('cd-minute').innerText=Math.floor(diff%3600000/60000);
+  document.getElementById('cd-second').innerText=Math.floor(diff%60000/1000);
+},1000);
+</script>
+
+</body>
+</html>
